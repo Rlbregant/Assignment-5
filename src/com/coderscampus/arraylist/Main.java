@@ -17,9 +17,10 @@ public class Main {
 		list.add("9");
 		list.add("10");
 		list.add("11");
+		
 		// Print the list size
 		System.out.println("Size: " + list.size());
-		System.out.println("Max size: " + list.maxSize());
+		System.out.println("Max size: " + list.getMaxSize());
 
 		// Print the list contents
 		for (int i = 0; i < list.size(); i++) {
