@@ -18,13 +18,15 @@ public class Main {
 		list.add("10");
 		list.add("11");
 		
-		// Print the list size
+		// Print the list size and current max size
 		System.out.println("Size: " + list.size());
 		System.out.println("Max size: " + list.getMaxSize());
 
 		// Print the list contents
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
+			
 		}
+		System.out.println(list.get(0));
 	}
 }
