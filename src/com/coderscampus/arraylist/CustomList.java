@@ -22,7 +22,7 @@ public interface CustomList<T> {
 	 *         <code>CustomList</code>
 	 */
 	int size();
-
+	int maxSize();
 	/**
 	 * This method will return the actual element from the <code>CustomList</code>
 	 * based on the index that is passed in.

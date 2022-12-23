@@ -6,6 +6,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 	private static final int DEFAULT_CAPACITY = 10;
 	private Object[] elements;
 	private int size;
+	int maxSize;
 
 	public CustomArrayList() {
 		this(DEFAULT_CAPACITY);
@@ -29,16 +30,21 @@ public class CustomArrayList<T> implements CustomList<T> {
 		}
 		return (T) elements[index];
 	}
-
+	// Check current array size
 	@Override
 	public int size() {
 		return size;
+	}
+	// Check for max array size
+	public int maxSize() {
+		return maxSize;
 	}
 
 	private void ensureCapacity(int minCapacity) {
 		if (minCapacity > elements.length) {
 			int newCapacity = Math.max(elements.length * 2, minCapacity);
 			elements = Arrays.copyOf(elements, newCapacity);
+			maxSize = newCapacity;
 		}
 	}
 }

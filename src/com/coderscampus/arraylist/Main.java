@@ -19,6 +19,7 @@ public class Main {
 		list.add("11");
 		// Print the list size
 		System.out.println("Size: " + list.size());
+		System.out.println("Max size: " + list.maxSize());
 
 		// Print the list contents
 		for (int i = 0; i < list.size(); i++) {
