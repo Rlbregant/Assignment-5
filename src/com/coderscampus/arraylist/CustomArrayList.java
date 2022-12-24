@@ -6,7 +6,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 	private static final int DEFAULT_CAPACITY = 10;
 	private Object[] elements;
 	private int size;
-	int maxSize = 10;
+	int maxSize = DEFAULT_CAPACITY;
 
 	public CustomArrayList() {
 		this(DEFAULT_CAPACITY);
@@ -36,6 +36,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		return size;
 	}
 	// Check for max array size
+	@Override
 	public int getMaxSize() {
 		return maxSize;
 	}

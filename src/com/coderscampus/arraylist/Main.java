@@ -27,6 +27,7 @@ public class Main {
 			System.out.println(list.get(i));
 			
 		}
+		// Print the Object in slot "0" of the list
 		System.out.println(list.get(0));
 	}
 }
