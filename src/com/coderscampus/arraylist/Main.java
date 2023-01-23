@@ -19,15 +19,26 @@ public class Main {
 		list.add("11");
 		
 		// Print the list size and current max size
-		System.out.println("Size: " + list.size());
+		System.out.println("Size of list: " + list.getSize());
 		System.out.println("Max size: " + list.getMaxSize());
 
+		// Removes an item from the list
+		try {
+		    list.remove(1);
+		} catch (IndexOutOfBoundsException e) {
+		    System.out.println("Error: Invalid index.");
+		}
+						
 		// Print the list contents
-		for (int i = 0; i < list.size(); i++) {
+		for (int i = 0; i < list.getSize(); i++) {
 			System.out.println(list.get(i));
 			
 		}
 		// Print the Object in slot "0" of the list
 		System.out.println(list.get(0));
+		
+		// Print the list size and current max size
+		System.out.println("Size of list: " + list.getSize());
+		System.out.println("Max size: " + list.getMaxSize());
 	}
 }

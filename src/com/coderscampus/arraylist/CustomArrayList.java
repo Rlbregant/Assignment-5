@@ -16,11 +16,11 @@ public class CustomArrayList<T> implements CustomList<T> {
 		elements = new Object[capacity];
 	}
 
-	@Override
-	public void add(T element) {
-		ensureCapacity(size + 1);
-		elements[size++] = element;
-	}
+//	@Override
+//	public void add(T element) {
+//		ensureCapacity(size + 1);
+//		elements[size++] = element;
+//	}
 
 	@Override
 	@SuppressWarnings("unchecked")
@@ -30,11 +30,13 @@ public class CustomArrayList<T> implements CustomList<T> {
 		}
 		return (T) elements[index];
 	}
+
 	// Check current array size
-	@Override
-	public int size() {
-		return size;
-	}
+//	@Override
+//	public int size() {
+//		return size;
+//	}
+
 	// Check for max array size
 	@Override
 	public int getMaxSize() {
@@ -47,5 +49,45 @@ public class CustomArrayList<T> implements CustomList<T> {
 			elements = Arrays.copyOf(elements, newCapacity);
 			maxSize = newCapacity;
 		}
+	}
+
+	@Override
+	public T remove(int index) throws IndexOutOfBoundsException {
+		if (index >= size || index < 0) {
+			throw new IndexOutOfBoundsException();
+		}
+		@SuppressWarnings("unchecked")
+		T removedElement = (T) elements[index];
+		for (int i = index; i < size - 1; i++) {
+			elements[i] = elements[i + 1];
+		}
+		size--;
+		return removedElement;
+	}
+
+	@Override
+	public boolean add(T item) {
+	    ensureCapacity(size + 1);
+	    elements[size++] = item;
+	    return true;
+	}
+
+	@Override
+	public boolean add(int index, T item) throws IndexOutOfBoundsException {
+	    if (index > size || index < 0) {
+	        throw new IndexOutOfBoundsException();
+	    }
+	    ensureCapacity(size + 1);
+	    for (int i = size; i > index; i--) {
+	        elements[i] = elements[i - 1];
+	    }
+	    elements[index] = item;
+	    size++;
+	    return true;
+	}
+
+	@Override
+	public int getSize() {
+		return size;
 	}
 }
