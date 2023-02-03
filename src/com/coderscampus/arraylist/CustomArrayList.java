@@ -50,6 +50,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		for (int i = index; i < size - 1; i++) {
 			elements[i] = elements[i + 1];
 		}
+		elements[size - 1] = null;
 		size--;
 		return removedElement;
 	}

@@ -18,6 +18,7 @@ public class Main {
 		list.add("10");
 		list.add("11");
 		
+		
 		// Print the list size and current max size
 		System.out.println("Size of list: " + list.getSize());
 		System.out.println("Max size: " + list.getMaxSize());
