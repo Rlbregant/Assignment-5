@@ -18,6 +18,13 @@ public class Main {
 		list.add("10");
 		list.add("11");
 		
+		list.remove(9);
+		list.add(7, "afadgdsfghdfhgd");
+		list.remove(9);
+		list.add("aefesfhgetghrt");
+		list.add(7, "sfgfgjtyjm");
+		list.add("11");
+		list.remove(9);
 		
 		// Print the list size and current max size
 		System.out.println("Size of list: " + list.getSize());

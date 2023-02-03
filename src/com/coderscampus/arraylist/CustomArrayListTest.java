@@ -1,6 +1,7 @@
 package com.coderscampus.arraylist;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class CustomArrayListTest {
@@ -30,8 +31,20 @@ public class CustomArrayListTest {
 
 	@Test
 	public void testGetMaxSize() {
-		CustomArrayList<Integer> list = new CustomArrayList<>(20);
-		assertEquals(20, list.getMaxSize());
+		int size = 20;		
+		CustomArrayList<Integer> list = new CustomArrayList<>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		list.add(5);
+		list.add(6);
+		list.add(7);
+		list.add(8);
+		list.add(9);
+		list.add(10);
+		list.add(11);
+		assertEquals(size, list.getMaxSize());
 	}
 
 	@Test
@@ -125,5 +138,24 @@ public class CustomArrayListTest {
 		list.ensureCapacity(5);
 		assertEquals(list.getMaxSize(), list.elements.length);
 	}
+	
+	@Test
+	  public void testDuplicateAfterRemovingMiddleItem() {
+		CustomArrayList<Integer> list = new CustomArrayList<>();
+	    list.add(1);
+	    list.add(2);
+	    list.add(3);
+	    list.add(4);
+	    list.add(5);
 
+	    // remove item from the middle
+	    list.remove(2);
+
+	    // check size of list
+	    assertEquals(4, list.getSize());
+
+	    // check if last item is duplicated
+	    assertEquals(5, (int) list.get(3));
+	    assertEquals(5, (int) list.get(list.getSize() - 1));
+	  }
 }
